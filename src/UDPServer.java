@@ -24,18 +24,18 @@ class UDPServer {
 		}
 	}
 
-	//��REGISTER <plate number> <owner name>��
+	//REGISTER <plate number> <owner name>
 	private static int regista (String plateNumber, String ownerName) {
 
 		if(data.get(plateNumber) != null)
-			//already exists
+		//already exists
 			return -1;
 		else
-			data.put(plateNumber, ownerName);
-		return 0;
+		data.put(plateNumber, ownerName);
+			return 0;
 	}
 
-	//��LOOKUP <plate number>��
+	//LOOKUP <plate number>
 	private static int verifica (String plateNumber) {
 		int result = data.size();
 		if(data.get(plateNumber) != null)
