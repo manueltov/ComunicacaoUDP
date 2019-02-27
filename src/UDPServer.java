@@ -5,7 +5,7 @@ import java.util.*;
 class UDPServer {
 
 	private static Map<String,String> data = new HashMap<String,String>();
-		
+
 	public static void main(String args[]) throws Exception {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		byte[] receiveData = new byte[1024];
@@ -24,9 +24,9 @@ class UDPServer {
 		}
 	}
 
-	//‘‘REGISTER <plate number> <owner name>’’
+	//ï¿½ï¿½REGISTER <plate number> <owner name>ï¿½ï¿½
 	private static int regista (String plateNumber, String ownerName) {
-		
+
 		if(data.get(plateNumber) != null)
 			//already exists
 			return -1;
@@ -34,8 +34,8 @@ class UDPServer {
 			data.put(plateNumber, ownerName);
 		return 0;
 	}
-	
-	//‘‘LOOKUP <plate number>’’
+
+	//ï¿½ï¿½LOOKUP <plate number>ï¿½ï¿½
 	private static int verifica (String plateNumber) {
 		int result = data.size();
 		if(data.get(plateNumber) != null)
