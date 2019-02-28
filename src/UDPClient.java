@@ -12,7 +12,8 @@ class UDPClient
     byte[] receiveData = new byte[1024];
     String sentence = inFromUser.readLine();
     sendData = sentence.getBytes();
-    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+    int Initialport = Interger.parseInt(args[0]);                                   //9876 Initialport
+    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, Initialport);
     clientSocket.send(sendPacket);
     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
     clientSocket.receive(receivePacket);

@@ -1,13 +1,18 @@
+import java.net.*;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.lang.*;
 
 class UDPServer {
 
 	private static Map<String,String> data = new HashMap<String,String>();
 
 	public static void main(String args[]) throws Exception {
-		DatagramSocket serverSocket = new DatagramSocket(9876);
+		System.out.println(args[0]);
+		int Initialport = Interger.parseInt(args[0]);	//9876 Initialport
+		DatagramSocket serverSocket = new DatagramSocket(Initialport);
 		byte[] receiveData = new byte[1024];
 		byte[] sendData = new byte[1024];
 		while (true) {
